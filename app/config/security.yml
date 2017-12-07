@@ -18,7 +18,7 @@ security:
 
         our_db_provider:
             entity:
-                class: App\Entity\User
+                class: BlogBundle\Entity\User
                 property: username
 
     firewalls:
@@ -40,6 +40,11 @@ security:
             pattern:    ^/
             http_basic: ~
             provider: our_db_provider
+
+            form_login:
+                login_path: login
+                check_path: login
+
 
 
     access_control:

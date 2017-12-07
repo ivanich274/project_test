@@ -4,3 +4,7 @@ home:
 
 blog:
   resource: '@BlogBundle/Resources/config/routing.yml'
+
+login:
+  resource: "@BlogBundle/Controller"
+  type: annotation

@@ -47,10 +47,12 @@ admin_blog_edit:
 
 user_signup:
     path: /user/signup
-    defaults: {_controller: BlogBundle:User:Signup}
+    defaults: {_controller: BlogBundle:User:signup}
+
 user_view:
     path: /user/cabinet
     defaults: {_controller: BlogBundle:User:Cabinet}
+
 
 
 

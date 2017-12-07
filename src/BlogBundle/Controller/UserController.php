@@ -14,15 +14,18 @@ use BlogBundle\Form\UserType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 
 class UserController extends Controller
 {
 
-
-    public function signupAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function signupAction(Request $request)
     {
         $user = new User();
 
@@ -31,7 +34,11 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+
+            $factory = $this->get('security.encoder_factory');
+            $encoder = $factory->getEncoder($user);
+            $password = $encoder->encodePassword($user->getPlainPassword(), $user->getSalt());
+
             $user->setPassword($password);
 
 
@@ -51,8 +58,6 @@ class UserController extends Controller
 
     public function CabinetAction(Request $request)
     {
-
-
         return new Response('OK');
     }
 
