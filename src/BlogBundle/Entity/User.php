@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Table(name="blog_user")
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="BlogBundle\Repository\UserRepository")
  */
 class User implements UserInterface, \Serializable
 {
