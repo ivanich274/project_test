@@ -12,15 +12,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 
-
 class SecurityController extends Controller
 {
     /**
      * @Route("/login", name="login")
      */
-    public function login(Request $request)
+    public function login(Request $request /*, AuthenticationUtils $authenticationUtils*/)
     {
 
+        //Это альтернативная релизация, т.к AuthenticationUtils $authenticationUtils на входе метода = NULL.
         $authenticationUtils = $this->get('security.authentication_utils');
 
         // get the login error if there is one
