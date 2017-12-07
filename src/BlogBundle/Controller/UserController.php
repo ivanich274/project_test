@@ -22,7 +22,7 @@ class UserController extends Controller
 {
 
 
-    public function signupAction(Request $request, UserPasswordEncoderInterface $passwordEncoder = null)
+    public function signupAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
 
