@@ -20,6 +20,7 @@ class SecurityController extends Controller
     public function login(Request $request /*, AuthenticationUtils $authenticationUtils*/)
     {
 
+
         //Это альтернативная релизация, т.к AuthenticationUtils $authenticationUtils на входе метода = NULL.
         $authenticationUtils = $this->get('security.authentication_utils');
 
