@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ blog.title }}  {% endblock %}
+{% block page_title %}  {{ blog.title }} {% endblock %}
+
+{%  block content %}
+<article>
+
+    <div class="container">
+        <div class="field body">
+            <p>{{ blog.body|raw }}</p>
+        </div>
+        <div class="field create">
+            {{ blog.created|date('m.d.Y') }}
+        </div>
+    </div>
+</article>
+
+<br/>
+<hr/>
+<a href="{{ path('blog_list') }}">Список записей</a><br/>
+
+{% endblock %}

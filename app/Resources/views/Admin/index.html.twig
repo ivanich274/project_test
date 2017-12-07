@@ -1,0 +1,14 @@
+{% extends "Admin/layout.html.twig" %}
+
+{% block title %}  Панель управления  {% endblock %}
+{% block page_title %} Панель управления  {% endblock %}
+
+{%  block content %}
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}

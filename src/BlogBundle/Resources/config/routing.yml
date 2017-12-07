@@ -1,0 +1,62 @@
+homepage:
+   path: /
+   defaults: {_controller: BlogBundle:Blog:homepage}
+
+blog_view:
+   path: /blog/{id}
+   defaults: {_controller: BlogBundle:Blog:blogView}
+   requirements:
+          id: '\d+'
+blog_list:
+   path: /list
+   defaults: {_controller: BlogBundle:Blog:blogList}
+
+blog_create:
+    path: /create
+    defaults: {_controller: BlogBundle:Blog:createPost}
+
+post_create:
+    path: /createPost
+    defaults: {_controller: BlogBundle:Blog:create}
+
+product_edit:
+    path: /edit/{id}
+    defaults: {_controller: BlogBundle:Blog:edit}
+    requirements:
+        id: '\d+'
+
+product_view:
+    path: /product/{id}
+    defaults: {_controller: BlogBundle:Blog:view}
+    requirements:
+        id: '\d+'
+
+admin_page:
+    path: /admin
+    defaults: {_controller: BlogBundle:Admin:Index}
+
+admin_blogs:
+    path: /admin/list
+    defaults: {_controller: BlogBundle:Admin:List}
+
+admin_blog_edit:
+    path: /admin/blog/{id}/edit
+    defaults: {_controller: BlogBundle:Admin:Edit}
+    requirements:
+       id: '\d+'
+
+user_signup:
+    path: /user/signup
+    defaults: {_controller: BlogBundle:User:Signup}
+user_view:
+    path: /user/cabinet
+    defaults: {_controller: BlogBundle:User:Cabinet}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Список записей {% endblock %}
+{% block page_title %} Список записей {% endblock %}
+
+{%  block content %}
+
+    <a href="{{ path('blog_create') }}">Добавить запись</a><br/><br/><br/>
+
+    {% for blog in blogs %}
+
+
+        <div class="card mb-3">
+            <h3 class="card-header">{{ blog.title }}</h3>
+            <div class="card-body">
+                <h6 class="card-subtitle text-muted">{{ blog.summary }}</h6>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">{{ blog.body}}</p>
+            </div>
+
+            <div class="card-body">
+                <a href="{{ path('blog_view', {'id': blog.id}) }}" class="card-link">Подробнее</a>
+            </div>
+            <div class="card-footer text-muted">
+                 {{ blog.created|date('m.d.Y в h:m') }}
+            </div>
+        </div>
+
+
+
+    {% endfor %}
+
+    <div class="navigation">
+        {{ knp_pagination_render(blogs) }}
+    </div>
+
+{% endblock %}
+
+
